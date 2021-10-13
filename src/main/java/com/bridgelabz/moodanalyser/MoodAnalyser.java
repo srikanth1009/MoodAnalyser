@@ -1,22 +1,33 @@
 package com.bridgelabz.moodanalyser;
 /*
- * Ability to analyse and respond happy or sad
+ * "I am in sad Mood" message in Constructor Should Return SAD
  */
 public class MoodAnalyser {
-	public static String analyseMood(String message) {
+	public static String message;
+
+    // Constructor
+    public MoodAnalyser(String message) {
+        this.message = message;
+        analyseMood();
+    }
+
+    //Getter
+    public String getMessage() {
+        return message;
+    }
+
+    //Setter
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public String analyseMood() {
+
         if (message.toLowerCase().contains("sad")) {
             return "Sad";
         } else if (message.toLowerCase().contains("happy")) {
-            return "Happy";
         }
-        return null;
-    }
-
-    public static void main(String[] args) {
-        String mood = MoodAnalyser.analyseMood("User is Happy");
-        System.out.println(mood);
-        mood = MoodAnalyser.analyseMood("User is Sad");
-        System.out.println(mood);
+        return "Happy";
     }
 }
 
